@@ -1,12 +1,14 @@
 "use client";
 
 import axios from "axios";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
   const [data, setData] = useState<any>({});
   const { confirmationcode } = useParams();
+  const router = useRouter();
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,12 +37,12 @@ const page = () => {
             <img
               src={data?.data?.Photos_1}
               alt=""
-              className="w-[200px] h-[200px] object-cover "
+              className="w-[200px] h-[200px] md:w-[400px] md:h-[400px] object-cover "
             />
             <img
               src={data?.data?.Photos_2}
               alt=""
-              className="w-[200px] h-[200px] object-cover"
+              className="w-[200px] h-[200px] md:w-[400px] md:h-[400px] object-cover"
             />
           </div>
         </div>
@@ -94,7 +96,7 @@ const page = () => {
         </div>
       </div>
       <div className="flex justify-center mt-4">
-        <button className="btn btn-primary">Konfirmasi </button>
+        <button className="btn btn-primary" onClick={() => router.push(`/form/${data?.data?.ID}`)}>Konfirmasi </button>
       </div>
     </div>
   );
