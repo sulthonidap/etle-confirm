@@ -50,7 +50,7 @@ const page = () => {
         confirmationDate: new Date().toISOString(),
       };
       axios
-        .post("http://localhost:8001/confirmation", formData)
+        .post(`${process.env.NEXT_PUBLIC_API_URL}/confirmation`, formData)
         .then((response) => {
           setShowToast(true);
           setTimeout(() => {
