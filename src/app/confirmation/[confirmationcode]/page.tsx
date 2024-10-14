@@ -27,7 +27,7 @@ const page = () => {
   console.log(data);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="flex w-full flex-col border-opacity-50 md:px-48">
         <div className="divider">
           <b>Bukti Foto Pelanggaran</b>
@@ -37,12 +37,12 @@ const page = () => {
             <img
               src={data?.data?.Photos_1}
               alt=""
-              className="w-[200px] h-[200px] md:w-[400px] md:h-[400px] object-cover "
+              className="w-[200px] h-[200px] md:w-[400px] md:h-[400px] object-contain "
             />
             <img
               src={data?.data?.Photos_2}
               alt=""
-              className="w-[200px] h-[200px] md:w-[400px] md:h-[400px] object-cover"
+              className="w-[200px] h-[200px] md:w-[400px] md:h-[400px] object-contain"
             />
           </div>
         </div>
